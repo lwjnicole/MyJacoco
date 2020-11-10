@@ -13,6 +13,8 @@ Please use our [mailing list](https://groups.google.com/forum/?fromgroups=#!foru
 for questions regarding JaCoCo which are not already covered by the
 [extensive documentation](http://www.jacoco.org/jacoco/trunk/doc/).
 
-Note: We do not answer general questions in the project's issue tracker. Please use our [mailing list](https://groups.google.com/forum/?fromgroups=#!forum/jacoco) for this.
+Jacoco二次开发
 -------------------------------------------------------------------------
 JaCoCo二次开发基于Git分支差分实现增量代码覆盖率
+一、原理：
+  通过使用org.eclipse.jgit比较新旧分支代码差分，取得变更行信息，生成报告时高亮线上变更行信息，未检出变更行不做处理。从而达到，增量显示代码覆盖率的目的
