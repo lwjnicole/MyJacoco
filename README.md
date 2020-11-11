@@ -219,3 +219,4 @@ public class ReportGenerator {
 
 # 七、报告展示：
 覆盖率概览：
+![JacocoTest1图片](https://github.com/lwjnicole/JacocoTest/blob/test/JacocoTest1.jpg)
