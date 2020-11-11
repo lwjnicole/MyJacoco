@@ -222,3 +222,7 @@ public class ReportGenerator {
 ![JacocoTest1图片](https://github.com/lwjnicole/JacocoTest/blob/test/JacocoTest1.jpg)
 
 ![JacocoTest2图片](https://github.com/lwjnicole/JacocoTest/blob/test/JacocoTest2.jpg)
+
+其中绿色表示的是覆盖的代码，红色表示的是没有被覆盖到的代码
+![JacocoTest3图片](https://github.com/lwjnicole/JacocoTest/blob/test/JacocoTest3.jpg)
+
