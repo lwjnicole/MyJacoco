@@ -24,7 +24,7 @@ JaCoCo二次开发基于Git分支差分实现增量代码覆盖率
    * 分支与分支之间对比；  
    * tag与tag之间对比；  
    * 支持增量代码覆盖率统计和全量代码覆盖率统计；  
-# 使用方法：  
-   下载我的源代码，然后在命令行中执行maven打包命令：mvn clean package -Dmaven.javadoc.test=true -Dmaven.test.skip=true  
+# 三、使用方法：  
+   下载我的源代码，然后在命令行中执行maven打包命令：``mvn clean package -Dmaven.javadoc.test=true -Dmaven.test.skip=true``  
    打包成功之后，会在项目目录下(jacoco\jacoco\target)生成zip包
    
