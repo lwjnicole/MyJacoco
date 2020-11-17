@@ -227,6 +227,10 @@ public class ReportGenerator {
 ![JacocoTest3图片](https://github.com/lwjnicole/JacocoTest/blob/test/JacocoTest3.jpg)
 
 # 八、传参说明：
-1. 全量覆盖率统计：``final CoverageBuilder coverageBuilder = new CoverageBuilder();
+1. 全量覆盖率统计：``final CoverageBuilder coverageBuilder = new CoverageBuilder();``
 2. 增量覆盖率统计：
-+ 基于分支对比：final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\\workspace\\JacocoTest", "test");
++ 基于分支对比：``final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\\workspace\\JacocoTest", "test");``
+参数说明：
+   + 参数1：本地仓库，
+   + 参数2：开发分支（预发分支），
+   + 参数3：基线分支(不传时默认为master)
