@@ -217,7 +217,7 @@ public class ReportGenerator {
  ```
  执行完后就生成报告了，通过第五步和第六步的结合，我们就可以实现随时到处exec文件，解析exec文件生成覆盖率报告，查看我们的测试覆盖率情况了。通过这种代码的方式来导出exec文件、解析exec文件生成报告是不需要启动停止服务的。
 
-# 七、报告展示：
+## 七、报告展示：
 覆盖率概览：
 ![JacocoTest1图片](https://github.com/lwjnicole/JacocoTest/blob/test/JacocoTest1.jpg)
 
@@ -226,19 +226,21 @@ public class ReportGenerator {
 其中绿色表示的是覆盖的代码，红色表示的是没有被覆盖到的代码
 ![JacocoTest3图片](https://github.com/lwjnicole/JacocoTest/blob/test/JacocoTest3.jpg)
 
-# 八、传参说明：
+## 八、传参说明：
 1. 全量覆盖率统计：``final CoverageBuilder coverageBuilder = new CoverageBuilder();``
 
 2. 增量覆盖率统计：
    + 基于分支对比：``final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\\workspace\\JacocoTest", "test");``  
+   
    参数说明：
       + 参数1：本地仓库（本地代码的git路径）
       + 参数2：开发分支（预发分支，即新分支）
       + 参数3：基线分支(不传时默认为master，传参数为待比较的基线分支)
       
-   + 基于tag号对比：``final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\workspace\JacocoTest","test","v004","v003");``  
+   + 基于tag号对比：``final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\workspace\JacocoTest","test","v004","v003");`` 
+   
    参数说明：
       + 参数1：本地仓库（本地代码的git路径）
       + 参数2：开发分支（预发分支，即新分支）
-      + 参数3：新Tag(预发版本)
+      + 参数3：新Tag（预发版本）
       + 参数4：基线Tag（变更前的版本）
