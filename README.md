@@ -226,3 +226,7 @@ public class ReportGenerator {
 其中绿色表示的是覆盖的代码，红色表示的是没有被覆盖到的代码
 ![JacocoTest3图片](https://github.com/lwjnicole/JacocoTest/blob/test/JacocoTest3.jpg)
 
+# 八、传参说明：
+1. 全量覆盖率统计：``final CoverageBuilder coverageBuilder = new CoverageBuilder();
+2. 增量覆盖率统计：
++ 基于分支对比：final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\\workspace\\JacocoTest", "test");
