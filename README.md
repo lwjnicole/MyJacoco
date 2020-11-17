@@ -17,23 +17,23 @@ Jacoco二次开发
 -------------------------------------------------------------------------
 JaCoCo二次开发基于Git分支差分实现增量代码覆盖率
 
-# 一、原理：  
+## 一、原理：  
    通过使用org.eclipse.jgit比较新旧分支代码差分，取得变更行信息，生成报告时高亮线上变更行信息，未检出变更行不做处理。从而达到，增量显示代码覆盖率的目的。  
-# 二、实现的功能：  
+## 二、实现的功能：  
    * 分支与master对比；  
    * 分支与分支之间对比；  
    * tag与tag之间对比；  
    * 支持增量代码覆盖率统计和全量代码覆盖率统计；  
-# 三、使用方法：  
+## 三、使用方法：  
    下载我的源代码，然后在命令行中执行maven打包命令：``mvn clean package -Dmaven.javadoc.test=true -Dmaven.test.skip=true``  
    打包成功之后，会在项目目录下(jacoco\jacoco\target)生成zip包，这个zip包就是release包，包含我们需要的jar包(jacocoagent.jar)
    
-# 四、代码分支比较差分说明：
+## 四、代码分支比较差分说明：
    以我的[测试代码](https://github.com/lwjnicole/JacocoTest.git)为例，下载测试代码，假设我们新开发的分支为test分支，master分支为基线分支。测试目的是测试新开发的test分支代码是否被全部测试覆盖到。我们测试时，首先把将测试代码打包，然后发布启动服务，使用手动或者自动的方式，完成测试(例如：接口自动化测试)；
    
    启动方式为在测试代码项目目录下执行命令：``java -javaagent:jacocoagent.jar=includes=*,output=tcpserver,port=9100,address=127.0.0.1 -jar target/demo-0.0.1-SNAPSHOT.jar``
    
-# 五、下载jacoco.exec（这里主要考虑到集成到Devops平台，通过代码获取）
+## 五、下载jacoco.exec（这里主要考虑到集成到Devops平台，通过代码获取）
    我们做完测试之后，就通过以下方式来下载jacoco.exec文件：
    ```Java
    /*******************************************************************************
@@ -98,7 +98,7 @@ public class ExecutionDataClient {
 }
 ```
 
-# 六、基于Git分支差分解析exec文件生成覆盖率报告：
+## 六、基于Git分支差分解析exec文件生成覆盖率报告：
    在做完第五步之后，我们通过以下方式来解析生成的exec文件，从而生成覆盖率报告：
  ```Java
  /*******************************************************************************
@@ -230,15 +230,13 @@ public class ReportGenerator {
 1. 全量覆盖率统计：``final CoverageBuilder coverageBuilder = new CoverageBuilder();``
 
 2. 增量覆盖率统计：
-   + 基于分支对比：``final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\\workspace\\JacocoTest", "test");``  
-   
+   + 基于分支对比：``final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\\workspace\\JacocoTest", "test");``    
    参数说明：
       + 参数1：本地仓库（本地代码的git路径）
       + 参数2：开发分支（预发分支，即新分支）
       + 参数3：基线分支(不传时默认为master，传参数为待比较的基线分支)
       
-   + 基于tag号对比：``final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\workspace\JacocoTest","test","v004","v003");`` 
-   
+   + 基于tag号对比：``final CoverageBuilder coverageBuilder = new CoverageBuilder("E:\workspace\JacocoTest","test","v004","v003");``   
    参数说明：
       + 参数1：本地仓库（本地代码的git路径）
       + 参数2：开发分支（预发分支，即新分支）
